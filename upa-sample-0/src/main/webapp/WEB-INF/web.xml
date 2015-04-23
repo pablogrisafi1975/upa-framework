@@ -12,10 +12,17 @@
 		<filter-name>guiceFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	<!-- esto es para la v0, no hace falta en v1
+	<context-param>
+		<param-name>upa-config-impl</param-name>
+		<param-value>org.upasample0.app.upa.UpaConfigImpl</param-value>
+	</context-param>
+	 -->
 	<listener>
-		<!-- basic guice application listener 
-		<listener-class>org.upasample0.guice.MyGuiceServletConfig</listener-class>
-		-->
-		<listener-class>org.upasample0.upa.MyUpaServletConfig</listener-class>
+		<!-- basic guice application listener <listener-class>org.upasample0.guice.MyGuiceServletConfig</listener-class> -->
+		<!-- v0 no me gusto, muy basada en la herencia, muy framework <listener-class>org.upasample0.upa.UpaServletConfig</listener-class>-->
+		<!-- v1 no me gusto, muy framework, no supe que hacer <listener-class>org.upasample2.upa.UpaServletConfig</listener-class>-->
+		<listener-class>org.upasample2.app.UpaGuiceServletConfig2</listener-class>
+		
 	</listener>
 </web-app>
