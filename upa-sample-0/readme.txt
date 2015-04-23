@@ -14,6 +14,7 @@ Controller tiene un servlet magico que autoinyecta , quizas otro para semi stati
 usar http://onami.apache.org/ si hace falta
 al principio hago el automapper manual a ver como queda
 http://localhost:8080/upa-sample-0/upa/whatever?a=1&b=2&b=2&a.r=lalal
+http://localhost:8080/upa-sample-0/upa/Search/findAllTx?param12=lalal&param2=5
 getRequestURI:/upa-sample-0/upa/whatever
 parameterMap: 
 {
