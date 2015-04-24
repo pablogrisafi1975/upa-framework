@@ -78,7 +78,7 @@ public class ControllerManager {
 						String parameterType = parameter.getType().getCanonicalName();
 						logger.debug("\t\tparameter: {} {} ", parameterType, parameterName);
 					});
-				logger.debug("\t\treturns: {} ", method.getReturnType().getCanonicalName());
+				logger.debug("\t\treturns: {} ", method.getGenericReturnType().getTypeName());
 			});
 			//@formatter:on
 
