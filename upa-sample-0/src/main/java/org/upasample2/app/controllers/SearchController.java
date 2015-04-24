@@ -7,10 +7,10 @@ import java.util.List;
 import org.upasample0.app.domain.Tx;
 
 public class SearchController {
-	public List<Tx> findAllTx(String param12, String param2) {
+	public List<Tx> findAllTx(Integer paramInteger, String paramString) {
 		ArrayList<Tx> arrayList = new ArrayList<>();
-		arrayList.add(new Tx("first", 1, LocalDate.now()));
-		arrayList.add(new Tx("second", 2, LocalDate.now().minusDays(3)));
+		arrayList.add(new Tx(paramString + "a", paramInteger + 1, LocalDate.now()));
+		arrayList.add(new Tx(paramString + "b", paramInteger + 2, LocalDate.now().minusDays(3)));
 		return arrayList;
 	}
 

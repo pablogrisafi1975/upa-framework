@@ -13,6 +13,9 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import javax.inject.Inject;
+
+import org.apache.commons.beanutils.ConvertUtilsBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,6 +26,9 @@ import com.google.inject.Singleton;
 @Singleton
 public class ControllerManager {
 	private static Logger logger = LoggerFactory.getLogger(ControllerManager.class);
+
+	@Inject
+	private ConvertUtilsBean convertUtilsBean;
 
 	private final Map<String, Target> targetMap = new HashMap<>();
 
@@ -96,7 +102,8 @@ public class ControllerManager {
 			Object[] args = (Object[]) Array.newInstance(Object.class, method.getParameterCount());
 			int i = 0;
 			for (Parameter parameter : method.getParameters()) {
-				args[i] = parameterMap.get(parameter.getName())[0];
+				String parameterString = parameterMap.get(parameter.getName())[0];
+				args[i] = convertUtilsBean.convert(parameterString, parameter.getType());
 				i++;
 			}
 			try {

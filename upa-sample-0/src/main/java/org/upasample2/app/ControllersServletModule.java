@@ -2,6 +2,7 @@ package org.upasample2.app;
 
 import java.time.LocalDate;
 
+import org.apache.commons.beanutils.ConvertUtilsBean;
 import org.upasample2.app.controllers.JobController;
 import org.upasample2.app.controllers.SearchController;
 import org.upasample2.app.controllers.UserController;
@@ -19,6 +20,7 @@ public class ControllersServletModule extends ServletModule {
 		bind(UserController.class);
 		bind(SearchController.class);
 		bind(JobController.class);
+		bind(ConvertUtilsBean.class);
 		serve("/upa/*").with(RouterServlet.class);
 	}
 
