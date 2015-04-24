@@ -1,4 +1,4 @@
-package org.upasample0.app.domain;
+package org.upasample2.app.domain;
 
 import java.time.LocalDate;
 

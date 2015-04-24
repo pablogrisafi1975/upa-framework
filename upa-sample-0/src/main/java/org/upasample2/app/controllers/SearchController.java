@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.upasample0.app.domain.Tx;
+import org.upasample2.app.domain.Tx;
 
 public class SearchController {
 	public List<Tx> findAllTx(Integer paramInteger, String paramString) {

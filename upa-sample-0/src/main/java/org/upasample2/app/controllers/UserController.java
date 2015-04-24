@@ -3,7 +3,7 @@ package org.upasample2.app.controllers;
 import java.util.Arrays;
 import java.util.List;
 
-import org.upasample0.app.domain.User;
+import org.upasample2.app.domain.User;
 
 public class UserController {
 
