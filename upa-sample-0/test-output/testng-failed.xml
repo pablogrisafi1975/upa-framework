@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="org.upasample2.app.GsonTest">
+      <class name="org.upasample2.app.ConvertUtilsBeanTest">
         <methods>
-          <include name="toJson" invocation-numbers="6"/>
+          <include name="fromText" invocation-numbers="13"/>
         </methods>
-      </class> <!-- org.upasample2.app.GsonTest -->
+      </class> <!-- org.upasample2.app.ConvertUtilsBeanTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

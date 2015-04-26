@@ -10,6 +10,10 @@ import org.upasample2.app.controllers.BasicTypesController;
 import org.upasample2.app.controllers.JobController;
 import org.upasample2.app.controllers.SearchController;
 import org.upasample2.app.controllers.UserController;
+import org.upasample2.app.convertes.LocalDateConverter;
+import org.upasample2.app.convertes.LocalDateTimeConverter;
+import org.upasample2.app.convertes.LocalTimeConverter;
+import org.upasample2.app.convertes.ZonedDateTimeConverter;
 import org.upasample2.app.gsonadapters.LocalDateAdapter;
 import org.upasample2.app.gsonadapters.LocalDateTimeAdapter;
 import org.upasample2.app.gsonadapters.LocalTimeAdapter;
@@ -29,7 +33,6 @@ public class ControllersServletModule extends ServletModule {
 		bind(SearchController.class);
 		bind(JobController.class);
 		bind(BasicTypesController.class);
-		bind(ConvertUtilsBean.class);
 		serve("/upa/*").with(RouterServlet.class);
 	}
 
@@ -42,5 +45,26 @@ public class ControllersServletModule extends ServletModule {
 		gson.registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter());
 		gson.registerTypeAdapter(ZonedDateTime.class, new ZonedDateTimeAdapter());
 		return gson.create();
+	}
+
+	@Provides
+	@Singleton
+	public ConvertUtilsBean convertUtilsBeanProvider() {
+		ConvertUtilsBean convertUtilsBean = new ConvertUtilsBean() {
+			@SuppressWarnings("unchecked")
+			@Override
+			public Object convert(String value, @SuppressWarnings("rawtypes") Class clazz) {
+				if (clazz.isEnum()) {
+					return Enum.valueOf(clazz, value);
+				} else {
+					return super.convert(value, clazz);
+				}
+			}
+		};
+		convertUtilsBean.register(new LocalDateConverter(), LocalDate.class);
+		convertUtilsBean.register(new LocalTimeConverter(), LocalTime.class);
+		convertUtilsBean.register(new LocalDateTimeConverter(), LocalDateTime.class);
+		convertUtilsBean.register(new ZonedDateTimeConverter(), ZonedDateTime.class);
+		return convertUtilsBean;
 	}
 }

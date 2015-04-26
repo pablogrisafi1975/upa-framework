@@ -7,30 +7,67 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZonedDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
 public class BasicTypesController {
 
-	public String enums(Boolean aBoolean, DayOfWeek dayOfWeek) {
-		return "";
+	/*-
+	 * http://localhost:8080/upa-sample-0/upa/BasicTypes/enums?aBoolean=true&dayOfWeek=SATURDAY
+	 */
+	public Map<String, Object> enums(Boolean aBoolean, DayOfWeek dayOfWeek) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("aBoolean", aBoolean);
+		map.put("dayOfWeek", dayOfWeek);
+		return map;
 	}
 
-	public String integer(BigInteger aBigInteger, Long aLong, Integer anInteger, Short aShort, Byte aByte,
-			Character aCharacter) {
-		return "";
+	/*-
+	 * http://localhost:8080/upa-sample-0/upa/BasicTypes/integers?aBigInteger=1234567890&aLong=123456789&anInteger=12345678
+	  &aShort=1234567&aByte=123
+	 */
+	public Map<String, Object> integers(BigInteger aBigInteger, Long aLong, Integer anInteger, Short aShort, Byte aByte) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("aBigInteger", aBigInteger);
+		map.put("aLong", aLong);
+		map.put("anInteger", anInteger);
+		map.put("aShort", aShort);
+		map.put("aByte", aByte);
+		return map;
 	}
 
-	public String decimal(BigDecimal aBigDecimal, Double aDouble, Float aFloat) {
-		return "";
+	/*-
+	 * http://localhost:8080/upa-sample-0/upa/BasicTypes/decimals?aBigDecimal=1.234567890&aDouble=12.3456789&aFloat=123.45678
+	 */
+	public Map<String, Object> decimals(BigDecimal aBigDecimal, Double aDouble, Float aFloat) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("aBigDecimal", aBigDecimal);
+		map.put("aDouble", aDouble);
+		map.put("aFloat", aFloat);
+		return map;
 	}
 
-	public String string(String aString, char aChar) {
-		return "";
+	/*-
+	 * http://localhost:8080/upa-sample-0/upa/BasicTypes/strings?aString=this%20is%20the%20string&aChar=g
+	 */
+	public Map<String, Object> strings(String aString, char aChar) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("aString", aString);
+		map.put("aChar", aChar);
+		return map;
 	}
 
-	public String time(ZonedDateTime aZonedDateTime, LocalDateTime aLocalDatetime, LocalDate aLocalDate,
+	/*-
+	 * http://localhost:8080/upa-sample-0/upa/BasicTypes/times?aZonedDateTime=2007-01-22T22:33:44.567%2B01:00&aLocalDateTime=2007-01-22T22:33:44&aLocalTime=22:33:44&aLocalDate=2007-01-22
+	 */
+	public Map<String, Object> times(ZonedDateTime aZonedDateTime, LocalDateTime aLocalDateTime, LocalDate aLocalDate,
 			LocalTime aLocalTime) {
-		return "zonedDateTime:" + aZonedDateTime + "localDatetime:" + aLocalDatetime + " localDate:" + aLocalDate
-				+ " localTime:" + aLocalTime;
+		Map<String, Object> map = new HashMap<>();
+		map.put("aZonedDateTime", aZonedDateTime);
+		map.put("aLocalDatetime", aLocalDateTime);
+		map.put("aLocalDate", aLocalDate);
+		map.put("aLocalTime", aLocalTime);
+		return map;
 	}
 
 }

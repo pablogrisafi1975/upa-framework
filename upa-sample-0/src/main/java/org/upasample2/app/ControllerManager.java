@@ -102,8 +102,13 @@ public class ControllerManager {
 			Object[] args = (Object[]) Array.newInstance(Object.class, method.getParameterCount());
 			int i = 0;
 			for (Parameter parameter : method.getParameters()) {
-				String parameterString = parameterMap.get(parameter.getName())[0];
-				args[i] = convertUtilsBean.convert(parameterString, parameter.getType());
+				String[] strings = parameterMap.get(parameter.getName());
+				if (strings == null) {
+					args[i] = null;
+				} else {
+					String parameterString = strings[0];
+					args[i] = convertUtilsBean.convert(parameterString, parameter.getType());
+				}
 				i++;
 			}
 			try {
