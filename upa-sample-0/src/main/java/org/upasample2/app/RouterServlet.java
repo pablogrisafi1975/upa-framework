@@ -9,6 +9,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,17 +43,18 @@ public class RouterServlet extends HttpServlet {
 	}
 
 	@Override
-	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+	public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
 		// logger.info("");
 		// getRequestURI:/upa-sample-0/upa/search/findUser
-		String name = findControllerName(req);
+		String name = findControllerName(request);
 		logger.debug("controller name: '{}'", name);
-		Object returnObject = controllerManager.invoke(((HttpServletRequest) req).getRequestURI(),
-				req.getParameterMap());
-		res.setCharacterEncoding("UTF-8");
-		res.setContentType("application/json");
+		HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+		HttpServletResponse httpServletResponse = (HttpServletResponse) response;
+		Object returnObject = controllerManager.invoke(httpServletRequest, httpServletResponse);
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("application/json");
 		String json = gson.toJson(returnObject);
-		res.getWriter().write(json);
+		response.getWriter().write(json);
 
 		// Utils.printInfo(req, res);
 	}

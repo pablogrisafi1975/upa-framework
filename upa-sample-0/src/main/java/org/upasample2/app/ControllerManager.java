@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
+import java.lang.reflect.ParameterizedType;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -14,6 +15,8 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.beanutils.ConvertUtilsBean;
 import org.slf4j.Logger;
@@ -81,7 +84,7 @@ public class ControllerManager {
 					.sorted((p1, p2) -> p1.getName().compareTo(p2.getName()))
 					.forEach(parameter -> {
 						String parameterName = parameter.getName();
-						String parameterType = parameter.getType().getCanonicalName();
+						String parameterType = parameter.getParameterizedType().getTypeName();
 						logger.debug("\t\tparameter: {} {} ", parameterType, parameterName);
 					});
 				logger.debug("\t\treturns: {} ", method.getGenericReturnType().getTypeName());
@@ -90,7 +93,9 @@ public class ControllerManager {
 
 	}
 
-	public Object invoke(String requestURI, Map<String, String[]> parameterMap) {
+	public Object invoke(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+		String requestURI = httpServletRequest.getRequestURI();
+		Map<String, String[]> parameterMap = httpServletRequest.getParameterMap();
 		String key = findKey(requestURI);
 		logger.debug("key:{}", key);
 		Target target = targetMap.get(key);
@@ -103,11 +108,24 @@ public class ControllerManager {
 			int i = 0;
 			for (Parameter parameter : method.getParameters()) {
 				String[] strings = parameterMap.get(parameter.getName());
-				if (strings == null) {
+				Class<?> parameterType = parameter.getType();
+				if (HttpServletRequest.class.isAssignableFrom(parameterType)) {
+					args[i] = httpServletRequest;
+				} else if (HttpServletResponse.class.isAssignableFrom(parameterType)) {
+					args[i] = httpServletResponse;
+				} else if (strings == null) {
 					args[i] = null;
 				} else {
-					String parameterString = strings[0];
-					args[i] = convertUtilsBean.convert(parameterString, parameter.getType());
+					if (parameterType.isArray()) {
+						args[i] = convertUtilsBean.convert(strings, parameterType.getComponentType());
+					} else if (List.class.isAssignableFrom(parameterType)) {
+						ParameterizedType parameterizedType = (ParameterizedType) parameter.getParameterizedType();
+						args[i] = Arrays.asList(convertUtilsBean.convert(strings,
+								(Class<?>) parameterizedType.getActualTypeArguments()[0]));
+					} else {
+						String argument = strings[0];
+						args[i] = convertUtilsBean.convert(argument, parameterType);
+					}
 				}
 				i++;
 			}

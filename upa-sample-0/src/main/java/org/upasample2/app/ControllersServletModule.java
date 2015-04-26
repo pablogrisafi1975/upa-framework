@@ -7,6 +7,7 @@ import java.time.ZonedDateTime;
 
 import org.apache.commons.beanutils.ConvertUtilsBean;
 import org.upasample2.app.controllers.BasicTypesController;
+import org.upasample2.app.controllers.ComplexTypesController;
 import org.upasample2.app.controllers.JobController;
 import org.upasample2.app.controllers.SearchController;
 import org.upasample2.app.controllers.UserController;
@@ -33,6 +34,7 @@ public class ControllersServletModule extends ServletModule {
 		bind(SearchController.class);
 		bind(JobController.class);
 		bind(BasicTypesController.class);
+		bind(ComplexTypesController.class);
 		serve("/upa/*").with(RouterServlet.class);
 	}
 
