@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Default_suite">
+              <span class="suite-name border-passed">Default suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
+                    <span>C:\Users\Pablo\AppData\Local\Temp\testng-eclipse--548397279\testng-customsuite.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Default_suite">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Default_suite">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Default_suite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Default_suite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Default_suite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Default_suite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">28 methods,   28 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="fromJson(true, class java.lang.Boolean, true, false)">fromJson(true, class java.lang.Boolean, true, false)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="fromJson(1234567891234567891, class java.lang.Long, 1234567891234567891, false)">fromJson(1234567891234567891, class java.lang.Long, 1234567891234567891, false)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="fromJson(1234567891, class java.lang.Integer, 1234567891, false)">fromJson(1234567891, class java.lang.Integer, 1234567891, false)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="fromJson(2007-01-22, class java.time.LocalDate, 2007-01-22, true)">fromJson(2007-01-22, class java.time.LocalDate, 2007-01-22, true)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="fromJson(22:33:44, class java.time.LocalTime, 22:33:44, true)">fromJson(22:33:44, class java.time.LocalTime, 22:33:44, true)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="fromJson(12345, class java.lang.Short, 12345, false)">fromJson(12345, class java.lang.Short, 12345, false)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="fromJson(1234567891234567891234567891234567891234567891234567891234567891234567891234567891234567891234567891...)">fromJson(1234567891234567891234567891234567891234567891234567891234567891234567891234567891234567891234567891...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="fromJson(123456789123456789123456789123456789123456789123456789123456789.123456789123456789123456789123456789...)">fromJson(123456789123456789123456789123456789123456789123456789123456789.123456789123456789123456789123456789...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="fromJson(12.345, class java.lang.Float, 12.345, false)">fromJson(12.345, class java.lang.Float, 12.345, false)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="fromJson(123, class java.lang.Byte, 123, false)">fromJson(123, class java.lang.Byte, 123, false)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="fromJson(1.23456789123456, class java.lang.Double, 1.23456789123456, false)">fromJson(1.23456789123456, class java.lang.Double, 1.23456789123456, false)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="fromJson(SATURDAY, class java.time.DayOfWeek, SATURDAY, true)">fromJson(SATURDAY, class java.time.DayOfWeek, SATURDAY, true)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="fromJson(2007-01-22T22:33:44.567+01:00, class java.time.ZonedDateTime, 2007-01-22T22:33:44.567+01:00, true)">fromJson(2007-01-22T22:33:44.567+01:00, class java.time.ZonedDateTime, 2007-01-22T22:33:44.567+01:00, true)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="fromJson(2007-01-22T22:33:44, class java.time.LocalDateTime, 2007-01-22T22:33:44, true)">fromJson(2007-01-22T22:33:44, class java.time.LocalDateTime, 2007-01-22T22:33:44, true)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="toJson(123, class java.lang.Byte, 123, false)">toJson(123, class java.lang.Byte, 123, false)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="toJson(123456789123456789123456789123456789123456789123456789123456789.123456789123456789123456789123456789...)">toJson(123456789123456789123456789123456789123456789123456789123456789.123456789123456789123456789123456789...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="toJson(1234567891234567891, class java.lang.Long, 1234567891234567891, false)">toJson(1234567891234567891, class java.lang.Long, 1234567891234567891, false)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="toJson(2007-01-22, class java.time.LocalDate, 2007-01-22, true)">toJson(2007-01-22, class java.time.LocalDate, 2007-01-22, true)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="toJson(1.23456789123456, class java.lang.Double, 1.23456789123456, false)">toJson(1.23456789123456, class java.lang.Double, 1.23456789123456, false)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="toJson(12345, class java.lang.Short, 12345, false)">toJson(12345, class java.lang.Short, 12345, false)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="toJson(22:33:44, class java.time.LocalTime, 22:33:44, true)">toJson(22:33:44, class java.time.LocalTime, 22:33:44, true)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="toJson(true, class java.lang.Boolean, true, false)">toJson(true, class java.lang.Boolean, true, false)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="toJson(2007-01-22T22:33:44, class java.time.LocalDateTime, 2007-01-22T22:33:44, true)">toJson(2007-01-22T22:33:44, class java.time.LocalDateTime, 2007-01-22T22:33:44, true)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="toJson(SATURDAY, class java.time.DayOfWeek, SATURDAY, true)">toJson(SATURDAY, class java.time.DayOfWeek, SATURDAY, true)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="toJson(12.345, class java.lang.Float, 12.345, false)">toJson(12.345, class java.lang.Float, 12.345, false)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="toJson(1234567891, class java.lang.Integer, 1234567891, false)">toJson(1234567891, class java.lang.Integer, 1234567891, false)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="toJson(2007-01-22T22:33:44.567+01:00, class java.time.ZonedDateTime, 2007-01-22T22:33:44.567+01:00, true)">toJson(2007-01-22T22:33:44.567+01:00, class java.time.ZonedDateTime, 2007-01-22T22:33:44.567+01:00, true)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="org.upasample2.app.GsonTest" hash-for-method="toJson(1234567891234567891234567891234567891234567891234567891234567891234567891234567891234567891234567891...)">toJson(1234567891234567891234567891234567891234567891234567891234567891234567891234567891234567891234567891...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Default_suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">org.upasample2.app.GsonTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="fromJson(true, class java.lang.Boolean, true, false)">
+                  </a> <!-- fromJson(true, class java.lang.Boolean, true, false) -->
+                  <span class="method-name">fromJson</span>
+                  <span class="parameters">(true, class java.lang.Boolean, true, false)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="fromJson(1234567891234567891, class java.lang.Long, 1234567891234567891, false)">
+                  </a> <!-- fromJson(1234567891234567891, class java.lang.Long, 1234567891234567891, false) -->
+                  <span class="method-name">fromJson</span>
+                  <span class="parameters">(1234567891234567891, class java.lang.Long, 1234567891234567891, false)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="fromJson(1234567891, class java.lang.Integer, 1234567891, false)">
+                  </a> <!-- fromJson(1234567891, class java.lang.Integer, 1234567891, false) -->
+                  <span class="method-name">fromJson</span>
+                  <span class="parameters">(1234567891, class java.lang.Integer, 1234567891, false)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="fromJson(2007-01-22, class java.time.LocalDate, 2007-01-22, true)">
+                  </a> <!-- fromJson(2007-01-22, class java.time.LocalDate, 2007-01-22, true) -->
+                  <span class="method-name">fromJson</span>
+                  <span class="parameters">(2007-01-22, class java.time.LocalDate, 2007-01-22, true)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="fromJson(22:33:44, class java.time.LocalTime, 22:33:44, true)">
+                  </a> <!-- fromJson(22:33:44, class java.time.LocalTime, 22:33:44, true) -->
+                  <span class="method-name">fromJson</span>
+                  <span class="parameters">(22:33:44, class java.time.LocalTime, 22:33:44, true)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="fromJson(12345, class java.lang.Short, 12345, false)">
+                  </a> <!-- fromJson(12345, class java.lang.Short, 12345, false) -->
+                  <span class="method-name">fromJson</span>
+                  <span class="parameters">(12345, class java.lang.Short, 12345, false)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="fromJson(1234567891234567891234567891234567891234567891234567891234567891234567891234567891234567891234567891...)">
+                  </a> <!-- fromJson(1234567891234567891234567891234567891234567891234567891234567891234567891234567891234567891234567891...) -->
+                  <span class="method-name">fromJson</span>
+                  <span class="parameters">(123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789, class java.math.BigInteger, 123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789, false)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="fromJson(123456789123456789123456789123456789123456789123456789123456789.123456789123456789123456789123456789...)">
+                  </a> <!-- fromJson(123456789123456789123456789123456789123456789123456789123456789.123456789123456789123456789123456789...) -->
+                  <span class="method-name">fromJson</span>
+                  <span class="parameters">(123456789123456789123456789123456789123456789123456789123456789.123456789123456789123456789123456789123456789123456789123456789, class java.math.BigDecimal, 123456789123456789123456789123456789123456789123456789123456789.123456789123456789123456789123456789123456789123456789123456789, false)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="fromJson(12.345, class java.lang.Float, 12.345, false)">
+                  </a> <!-- fromJson(12.345, class java.lang.Float, 12.345, false) -->
+                  <span class="method-name">fromJson</span>
+                  <span class="parameters">(12.345, class java.lang.Float, 12.345, false)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="fromJson(123, class java.lang.Byte, 123, false)">
+                  </a> <!-- fromJson(123, class java.lang.Byte, 123, false) -->
+                  <span class="method-name">fromJson</span>
+                  <span class="parameters">(123, class java.lang.Byte, 123, false)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="fromJson(1.23456789123456, class java.lang.Double, 1.23456789123456, false)">
+                  </a> <!-- fromJson(1.23456789123456, class java.lang.Double, 1.23456789123456, false) -->
+                  <span class="method-name">fromJson</span>
+                  <span class="parameters">(1.23456789123456, class java.lang.Double, 1.23456789123456, false)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="fromJson(SATURDAY, class java.time.DayOfWeek, SATURDAY, true)">
+                  </a> <!-- fromJson(SATURDAY, class java.time.DayOfWeek, SATURDAY, true) -->
+                  <span class="method-name">fromJson</span>
+                  <span class="parameters">(SATURDAY, class java.time.DayOfWeek, SATURDAY, true)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="fromJson(2007-01-22T22:33:44.567+01:00, class java.time.ZonedDateTime, 2007-01-22T22:33:44.567+01:00, true)">
+                  </a> <!-- fromJson(2007-01-22T22:33:44.567+01:00, class java.time.ZonedDateTime, 2007-01-22T22:33:44.567+01:00, true) -->
+                  <span class="method-name">fromJson</span>
+                  <span class="parameters">(2007-01-22T22:33:44.567+01:00, class java.time.ZonedDateTime, 2007-01-22T22:33:44.567+01:00, true)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="fromJson(2007-01-22T22:33:44, class java.time.LocalDateTime, 2007-01-22T22:33:44, true)">
+                  </a> <!-- fromJson(2007-01-22T22:33:44, class java.time.LocalDateTime, 2007-01-22T22:33:44, true) -->
+                  <span class="method-name">fromJson</span>
+                  <span class="parameters">(2007-01-22T22:33:44, class java.time.LocalDateTime, 2007-01-22T22:33:44, true)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="toJson(123, class java.lang.Byte, 123, false)">
+                  </a> <!-- toJson(123, class java.lang.Byte, 123, false) -->
+                  <span class="method-name">toJson</span>
+                  <span class="parameters">(123, class java.lang.Byte, 123, false)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="toJson(123456789123456789123456789123456789123456789123456789123456789.123456789123456789123456789123456789...)">
+                  </a> <!-- toJson(123456789123456789123456789123456789123456789123456789123456789.123456789123456789123456789123456789...) -->
+                  <span class="method-name">toJson</span>
+                  <span class="parameters">(123456789123456789123456789123456789123456789123456789123456789.123456789123456789123456789123456789123456789123456789123456789, class java.math.BigDecimal, 123456789123456789123456789123456789123456789123456789123456789.123456789123456789123456789123456789123456789123456789123456789, false)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="toJson(1234567891234567891, class java.lang.Long, 1234567891234567891, false)">
+                  </a> <!-- toJson(1234567891234567891, class java.lang.Long, 1234567891234567891, false) -->
+                  <span class="method-name">toJson</span>
+                  <span class="parameters">(1234567891234567891, class java.lang.Long, 1234567891234567891, false)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="toJson(2007-01-22, class java.time.LocalDate, 2007-01-22, true)">
+                  </a> <!-- toJson(2007-01-22, class java.time.LocalDate, 2007-01-22, true) -->
+                  <span class="method-name">toJson</span>
+                  <span class="parameters">(2007-01-22, class java.time.LocalDate, 2007-01-22, true)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="toJson(1.23456789123456, class java.lang.Double, 1.23456789123456, false)">
+                  </a> <!-- toJson(1.23456789123456, class java.lang.Double, 1.23456789123456, false) -->
+                  <span class="method-name">toJson</span>
+                  <span class="parameters">(1.23456789123456, class java.lang.Double, 1.23456789123456, false)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="toJson(12345, class java.lang.Short, 12345, false)">
+                  </a> <!-- toJson(12345, class java.lang.Short, 12345, false) -->
+                  <span class="method-name">toJson</span>
+                  <span class="parameters">(12345, class java.lang.Short, 12345, false)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="toJson(22:33:44, class java.time.LocalTime, 22:33:44, true)">
+                  </a> <!-- toJson(22:33:44, class java.time.LocalTime, 22:33:44, true) -->
+                  <span class="method-name">toJson</span>
+                  <span class="parameters">(22:33:44, class java.time.LocalTime, 22:33:44, true)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="toJson(true, class java.lang.Boolean, true, false)">
+                  </a> <!-- toJson(true, class java.lang.Boolean, true, false) -->
+                  <span class="method-name">toJson</span>
+                  <span class="parameters">(true, class java.lang.Boolean, true, false)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="toJson(2007-01-22T22:33:44, class java.time.LocalDateTime, 2007-01-22T22:33:44, true)">
+                  </a> <!-- toJson(2007-01-22T22:33:44, class java.time.LocalDateTime, 2007-01-22T22:33:44, true) -->
+                  <span class="method-name">toJson</span>
+                  <span class="parameters">(2007-01-22T22:33:44, class java.time.LocalDateTime, 2007-01-22T22:33:44, true)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="toJson(SATURDAY, class java.time.DayOfWeek, SATURDAY, true)">
+                  </a> <!-- toJson(SATURDAY, class java.time.DayOfWeek, SATURDAY, true) -->
+                  <span class="method-name">toJson</span>
+                  <span class="parameters">(SATURDAY, class java.time.DayOfWeek, SATURDAY, true)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="toJson(12.345, class java.lang.Float, 12.345, false)">
+                  </a> <!-- toJson(12.345, class java.lang.Float, 12.345, false) -->
+                  <span class="method-name">toJson</span>
+                  <span class="parameters">(12.345, class java.lang.Float, 12.345, false)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="toJson(1234567891, class java.lang.Integer, 1234567891, false)">
+                  </a> <!-- toJson(1234567891, class java.lang.Integer, 1234567891, false) -->
+                  <span class="method-name">toJson</span>
+                  <span class="parameters">(1234567891, class java.lang.Integer, 1234567891, false)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="toJson(2007-01-22T22:33:44.567+01:00, class java.time.ZonedDateTime, 2007-01-22T22:33:44.567+01:00, true)">
+                  </a> <!-- toJson(2007-01-22T22:33:44.567+01:00, class java.time.ZonedDateTime, 2007-01-22T22:33:44.567+01:00, true) -->
+                  <span class="method-name">toJson</span>
+                  <span class="parameters">(2007-01-22T22:33:44.567+01:00, class java.time.ZonedDateTime, 2007-01-22T22:33:44.567+01:00, true)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="toJson(1234567891234567891234567891234567891234567891234567891234567891234567891234567891234567891234567891...)">
+                  </a> <!-- toJson(1234567891234567891234567891234567891234567891234567891234567891234567891234567891234567891234567891...) -->
+                  <span class="method-name">toJson</span>
+                  <span class="parameters">(123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789, class java.math.BigInteger, 123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789, false)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+        </div> <!-- panel Default_suite -->
+        <div panel-name="test-xml-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\Pablo\AppData\Local\Temp\testng-eclipse--548397279\testng-customsuite.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Default suite&quot;&gt;
+  &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;org.upasample2.app.GsonTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Default test --&gt;
+&lt;/suite&gt; &lt;!-- Default suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Default test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Default_suite');
+function tableData_Default_suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(28);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'fromJson')
+data.setCell(0, 2, 'org.upasample2.app.GsonTest')
+data.setCell(0, 3, 88);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'fromJson')
+data.setCell(1, 2, 'org.upasample2.app.GsonTest')
+data.setCell(1, 3, 70);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'toJson')
+data.setCell(2, 2, 'org.upasample2.app.GsonTest')
+data.setCell(2, 3, 24);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'fromJson')
+data.setCell(3, 2, 'org.upasample2.app.GsonTest')
+data.setCell(3, 3, 10);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'fromJson')
+data.setCell(4, 2, 'org.upasample2.app.GsonTest')
+data.setCell(4, 3, 3);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'fromJson')
+data.setCell(5, 2, 'org.upasample2.app.GsonTest')
+data.setCell(5, 3, 3);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'toJson')
+data.setCell(6, 2, 'org.upasample2.app.GsonTest')
+data.setCell(6, 3, 2);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'fromJson')
+data.setCell(7, 2, 'org.upasample2.app.GsonTest')
+data.setCell(7, 3, 2);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'toJson')
+data.setCell(8, 2, 'org.upasample2.app.GsonTest')
+data.setCell(8, 3, 2);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'toJson')
+data.setCell(9, 2, 'org.upasample2.app.GsonTest')
+data.setCell(9, 3, 2);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'fromJson')
+data.setCell(10, 2, 'org.upasample2.app.GsonTest')
+data.setCell(10, 3, 2);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'fromJson')
+data.setCell(11, 2, 'org.upasample2.app.GsonTest')
+data.setCell(11, 3, 2);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'fromJson')
+data.setCell(12, 2, 'org.upasample2.app.GsonTest')
+data.setCell(12, 3, 1);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'fromJson')
+data.setCell(13, 2, 'org.upasample2.app.GsonTest')
+data.setCell(13, 3, 1);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'toJson')
+data.setCell(14, 2, 'org.upasample2.app.GsonTest')
+data.setCell(14, 3, 1);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'fromJson')
+data.setCell(15, 2, 'org.upasample2.app.GsonTest')
+data.setCell(15, 3, 1);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'toJson')
+data.setCell(16, 2, 'org.upasample2.app.GsonTest')
+data.setCell(16, 3, 1);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'toJson')
+data.setCell(17, 2, 'org.upasample2.app.GsonTest')
+data.setCell(17, 3, 1);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'toJson')
+data.setCell(18, 2, 'org.upasample2.app.GsonTest')
+data.setCell(18, 3, 1);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'toJson')
+data.setCell(19, 2, 'org.upasample2.app.GsonTest')
+data.setCell(19, 3, 1);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'fromJson')
+data.setCell(20, 2, 'org.upasample2.app.GsonTest')
+data.setCell(20, 3, 1);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'toJson')
+data.setCell(21, 2, 'org.upasample2.app.GsonTest')
+data.setCell(21, 3, 1);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'fromJson')
+data.setCell(22, 2, 'org.upasample2.app.GsonTest')
+data.setCell(22, 3, 1);
+data.setCell(23, 0, 23)
+data.setCell(23, 1, 'toJson')
+data.setCell(23, 2, 'org.upasample2.app.GsonTest')
+data.setCell(23, 3, 1);
+data.setCell(24, 0, 24)
+data.setCell(24, 1, 'toJson')
+data.setCell(24, 2, 'org.upasample2.app.GsonTest')
+data.setCell(24, 3, 1);
+data.setCell(25, 0, 25)
+data.setCell(25, 1, 'fromJson')
+data.setCell(25, 2, 'org.upasample2.app.GsonTest')
+data.setCell(25, 3, 1);
+data.setCell(26, 0, 26)
+data.setCell(26, 1, 'toJson')
+data.setCell(26, 2, 'org.upasample2.app.GsonTest')
+data.setCell(26, 3, 0);
+data.setCell(27, 0, 27)
+data.setCell(27, 1, 'toJson')
+data.setCell(27, 2, 'org.upasample2.app.GsonTest')
+data.setCell(27, 3, 0);
+window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 224 ms</span>
+              <div id="times-div-Default_suite">
+              </div> <!-- times-div-Default_suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">org.upasample2.app.GsonTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">fromJson(1234567891234567891234567891234567891234567891234567891234567891234567891234567891234567891234567891...)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">fromJson(1234567891234567891, class java.lang.Long, 1234567891234567891, false)</span>
+                <span class="method-start">71 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">fromJson(1234567891, class java.lang.Integer, 1234567891, false)</span>
+                <span class="method-start">73 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">fromJson(12345, class java.lang.Short, 12345, false)</span>
+                <span class="method-start">75 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">fromJson(123, class java.lang.Byte, 123, false)</span>
+                <span class="method-start">85 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">fromJson(123456789123456789123456789123456789123456789123456789123456789.123456789123456789123456789123456789...)</span>
+                <span class="method-start">87 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">fromJson(1.23456789123456, class java.lang.Double, 1.23456789123456, false)</span>
+                <span class="method-start">90 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">fromJson(12.345, class java.lang.Float, 12.345, false)</span>
+                <span class="method-start">92 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">fromJson(true, class java.lang.Boolean, true, false)</span>
+                <span class="method-start">94 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">fromJson(SATURDAY, class java.time.DayOfWeek, SATURDAY, true)</span>
+                <span class="method-start">96 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">fromJson(2007-01-22, class java.time.LocalDate, 2007-01-22, true)</span>
+                <span class="method-start">100 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">fromJson(22:33:44, class java.time.LocalTime, 22:33:44, true)</span>
+                <span class="method-start">189 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">fromJson(2007-01-22T22:33:44, class java.time.LocalDateTime, 2007-01-22T22:33:44, true)</span>
+                <span class="method-start">192 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">fromJson(2007-01-22T22:33:44.567+01:00, class java.time.ZonedDateTime, 2007-01-22T22:33:44.567+01:00, true)</span>
+                <span class="method-start">195 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">toJson(1234567891234567891234567891234567891234567891234567891234567891234567891234567891234567891234567891...)</span>
+                <span class="method-start">200 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">toJson(1234567891234567891, class java.lang.Long, 1234567891234567891, false)</span>
+                <span class="method-start">225 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">toJson(1234567891, class java.lang.Integer, 1234567891, false)</span>
+                <span class="method-start">227 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">toJson(12345, class java.lang.Short, 12345, false)</span>
+                <span class="method-start">228 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">toJson(123, class java.lang.Byte, 123, false)</span>
+                <span class="method-start">230 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">toJson(123456789123456789123456789123456789123456789123456789123456789.123456789123456789123456789123456789...)</span>
+                <span class="method-start">234 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">toJson(1.23456789123456, class java.lang.Double, 1.23456789123456, false)</span>
+                <span class="method-start">236 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">toJson(12.345, class java.lang.Float, 12.345, false)</span>
+                <span class="method-start">237 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">toJson(true, class java.lang.Boolean, true, false)</span>
+                <span class="method-start">240 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">toJson(SATURDAY, class java.time.DayOfWeek, SATURDAY, true)</span>
+                <span class="method-start">241 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">toJson(2007-01-22, class java.time.LocalDate, 2007-01-22, true)</span>
+                <span class="method-start">243 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">toJson(22:33:44, class java.time.LocalTime, 22:33:44, true)</span>
+                <span class="method-start">244 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">toJson(2007-01-22T22:33:44, class java.time.LocalDateTime, 2007-01-22T22:33:44, true)</span>
+                <span class="method-start">245 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">toJson(2007-01-22T22:33:44.567+01:00, class java.time.ZonedDateTime, 2007-01-22T22:33:44.567+01:00, true)</span>
+                <span class="method-start">247 ms</span>
+              </div> <!-- test-method -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

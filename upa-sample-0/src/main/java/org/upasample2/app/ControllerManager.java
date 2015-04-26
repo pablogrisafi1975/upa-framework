@@ -112,7 +112,7 @@ public class ControllerManager {
 				logger.debug("returnObject:{}", returnObject);
 				return returnObject;
 			} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-				e.printStackTrace();
+				logger.error("error invoking {}", key, e);
 				return null;
 			}
 

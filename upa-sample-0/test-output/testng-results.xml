@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="28" passed="28">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="284" started-at="2015-04-26T19:17:07Z" finished-at="2015-04-26T19:17:07Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="284" started-at="2015-04-26T19:17:07Z" finished-at="2015-04-26T19:17:07Z">
+      <class name="org.upasample2.app.GsonTest">
+        <test-method status="PASS" signature="fromJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="fromJson" duration-ms="70" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.math.BigInteger]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fromJson -->
+        <test-method status="PASS" signature="fromJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="fromJson" duration-ms="1" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1234567891234567891]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.lang.Long]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1234567891234567891]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fromJson -->
+        <test-method status="PASS" signature="fromJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="fromJson" duration-ms="1" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1234567891]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.lang.Integer]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1234567891]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fromJson -->
+        <test-method status="PASS" signature="fromJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="fromJson" duration-ms="10" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12345]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.lang.Short]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[12345]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fromJson -->
+        <test-method status="PASS" signature="fromJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="fromJson" duration-ms="1" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[123]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.lang.Byte]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fromJson -->
+        <test-method status="PASS" signature="fromJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="fromJson" duration-ms="2" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[123456789123456789123456789123456789123456789123456789123456789.123456789123456789123456789123456789123456789123456789123456789]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.math.BigDecimal]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456789123456789123456789123456789123456789123456789123456789.123456789123456789123456789123456789123456789123456789123456789]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fromJson -->
+        <test-method status="PASS" signature="fromJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="fromJson" duration-ms="1" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1.23456789123456]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.lang.Double]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1.23456789123456]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fromJson -->
+        <test-method status="PASS" signature="fromJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="fromJson" duration-ms="1" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12.345]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.lang.Float]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[12.345]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fromJson -->
+        <test-method status="PASS" signature="fromJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="fromJson" duration-ms="1" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.lang.Boolean]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fromJson -->
+        <test-method status="PASS" signature="fromJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="fromJson" duration-ms="3" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[SATURDAY]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.time.DayOfWeek]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[SATURDAY]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fromJson -->
+        <test-method status="PASS" signature="fromJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="fromJson" duration-ms="88" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2007-01-22]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.time.LocalDate]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2007-01-22]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fromJson -->
+        <test-method status="PASS" signature="fromJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="fromJson" duration-ms="2" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[22:33:44]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.time.LocalTime]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[22:33:44]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fromJson -->
+        <test-method status="PASS" signature="fromJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="fromJson" duration-ms="2" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2007-01-22T22:33:44]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.time.LocalDateTime]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2007-01-22T22:33:44]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fromJson -->
+        <test-method status="PASS" signature="fromJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="fromJson" duration-ms="3" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2007-01-22T22:33:44.567+01:00]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.time.ZonedDateTime]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2007-01-22T22:33:44.567+01:00]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fromJson -->
+        <test-method status="PASS" signature="toJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="toJson" duration-ms="24" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.math.BigInteger]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toJson -->
+        <test-method status="PASS" signature="toJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="toJson" duration-ms="1" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1234567891234567891]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.lang.Long]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1234567891234567891]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toJson -->
+        <test-method status="PASS" signature="toJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="toJson" duration-ms="1" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1234567891]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.lang.Integer]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1234567891]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toJson -->
+        <test-method status="PASS" signature="toJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="toJson" duration-ms="2" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12345]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.lang.Short]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[12345]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toJson -->
+        <test-method status="PASS" signature="toJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="toJson" duration-ms="1" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[123]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.lang.Byte]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toJson -->
+        <test-method status="PASS" signature="toJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="toJson" duration-ms="2" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[123456789123456789123456789123456789123456789123456789123456789.123456789123456789123456789123456789123456789123456789123456789]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.math.BigDecimal]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456789123456789123456789123456789123456789123456789123456789.123456789123456789123456789123456789123456789123456789123456789]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toJson -->
+        <test-method status="PASS" signature="toJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="toJson" duration-ms="1" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1.23456789123456]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.lang.Double]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1.23456789123456]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toJson -->
+        <test-method status="PASS" signature="toJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="toJson" duration-ms="1" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12.345]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.lang.Float]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[12.345]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toJson -->
+        <test-method status="PASS" signature="toJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="toJson" duration-ms="1" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.lang.Boolean]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toJson -->
+        <test-method status="PASS" signature="toJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="toJson" duration-ms="1" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[SATURDAY]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.time.DayOfWeek]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[SATURDAY]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toJson -->
+        <test-method status="PASS" signature="toJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="toJson" duration-ms="0" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2007-01-22]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.time.LocalDate]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2007-01-22]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toJson -->
+        <test-method status="PASS" signature="toJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="toJson" duration-ms="1" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[22:33:44]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.time.LocalTime]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[22:33:44]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toJson -->
+        <test-method status="PASS" signature="toJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="toJson" duration-ms="2" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2007-01-22T22:33:44]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.time.LocalDateTime]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2007-01-22T22:33:44]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toJson -->
+        <test-method status="PASS" signature="toJson(java.lang.String, java.lang.Class, java.lang.Object, boolean)[pri:0, instance:org.upasample2.app.GsonTest@3cbbc1e0]" name="toJson" duration-ms="0" started-at="2015-04-26T16:17:07Z" data-provider="gsonDataProvider" finished-at="2015-04-26T16:17:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2007-01-22T22:33:44.567+01:00]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[class java.time.ZonedDateTime]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2007-01-22T22:33:44.567+01:00]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toJson -->
+      </class> <!-- org.upasample2.app.GsonTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

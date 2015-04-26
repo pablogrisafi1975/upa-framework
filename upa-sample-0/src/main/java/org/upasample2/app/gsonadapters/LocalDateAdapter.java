@@ -1,4 +1,4 @@
-package org.upasample2.app;
+package org.upasample2.app.gsonadapters;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -11,8 +11,7 @@ public class LocalDateAdapter extends TypeAdapter<LocalDate> {
 
 	@Override
 	public LocalDate read(JsonReader jsonReader) throws IOException {
-		String localDateAsString = jsonReader.nextString();
-		return LocalDate.parse(localDateAsString);
+		return LocalDate.parse(jsonReader.nextString());
 	}
 
 	@Override
