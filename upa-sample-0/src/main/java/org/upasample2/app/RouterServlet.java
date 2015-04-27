@@ -1,6 +1,8 @@
 package org.upasample2.app;
 
+import java.io.BufferedInputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 
 import javax.inject.Inject;
 import javax.servlet.ServletConfig;
@@ -13,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.upasample2.app.file.UpaFile;
 
 import com.google.gson.Gson;
 import com.google.inject.Injector;
@@ -51,10 +54,29 @@ public class RouterServlet extends HttpServlet {
 		HttpServletRequest httpServletRequest = (HttpServletRequest) request;
 		HttpServletResponse httpServletResponse = (HttpServletResponse) response;
 		Object returnObject = controllerManager.invoke(httpServletRequest, httpServletResponse);
-		response.setCharacterEncoding("UTF-8");
-		response.setContentType("application/json");
-		String json = gson.toJson(returnObject);
-		response.getWriter().write(json);
+		if (returnObject instanceof UpaFile) {
+			UpaFile upaFile = (UpaFile) returnObject;
+			response.setContentType("application/octet-stream");
+			if (upaFile.getLength() != null) {
+				response.setContentLength((int) upaFile.getLength());
+			}
+			httpServletResponse.setHeader("Content-Disposition",
+					String.format("attachment; filename=\"%s\"", upaFile.getFileName()));
+			OutputStream out = response.getOutputStream();
+			try (BufferedInputStream in = new BufferedInputStream(upaFile.getContent())) {
+				byte[] buffer = new byte[4096];
+				int length;
+				while ((length = in.read(buffer)) > 0) {
+					out.write(buffer, 0, length);
+				}
+			}
+			out.flush();
+		} else {
+			response.setCharacterEncoding("UTF-8");
+			response.setContentType("application/json");
+			String json = gson.toJson(returnObject);
+			response.getWriter().write(json);
+		}
 
 		// Utils.printInfo(req, res);
 	}
