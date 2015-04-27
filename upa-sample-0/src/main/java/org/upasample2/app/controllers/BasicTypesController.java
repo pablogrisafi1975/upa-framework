@@ -67,6 +67,11 @@ public class BasicTypesController {
 		map.put("aLocalDatetime", aLocalDateTime);
 		map.put("aLocalDate", aLocalDate);
 		map.put("aLocalTime", aLocalTime);
+		/*- legacy date related types are NOT handled at all and serialized like crap
+		map.put("java.util.Date.from(aZonedDateTime.toInstant())", java.util.Date.from(aZonedDateTime.toInstant())); ->"Jan 22, 2007 6:33:44 PM"
+		map.put("java.sql.Date.from(aZonedDateTime.toInstant())", java.sql.Date.from(aZonedDateTime.toInstant())); ->"Jan 22, 2007 6:33:44 PM"
+		map.put("java.util.GregorianCalendar.from(aZonedDateTime)", java.util.GregorianCalendar.from(aZonedDateTime));->{"year":2007,"month":0,"dayOfMonth":22,"hourOfDay":22,"minute":33,"second":44}
+		 */
 		return map;
 	}
 
