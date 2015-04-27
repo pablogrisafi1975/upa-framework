@@ -21,10 +21,10 @@ public class ComplexTypesController {
 	/*-
 	 * http://localhost:8080/upa-sample-0/upa/ComplexTypes/maps?integerStringMap[1]=aaa&integerStringMap[2]=bbb&stringIntegerMap[AAAA]=111&stringIntegerMap[BBBB]=222
 	 */
-	// TODO: not working yet, implies a full rewriting in invoke
-	public Map<String, Object> maps(Map<Integer, String> integerStringMap, Integer[] stringIntegerMap) {
+	public Map<String, Object> maps(Map<Integer, String> integerStringMap, Map<String, Integer> stringIntegerMap) {
 		Map<String, Object> map = new HashMap<>();
 		map.put("integerStringMap", integerStringMap);
+		map.put("integerStringMap.key0.class", integerStringMap.keySet().iterator().next().getClass().getSimpleName());
 		map.put("stringIntegerMap", stringIntegerMap);
 		return map;
 	}

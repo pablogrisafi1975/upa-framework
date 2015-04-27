@@ -50,7 +50,7 @@ public class BasicTypesController {
 	/*-
 	 * http://localhost:8080/upa-sample-0/upa/BasicTypes/strings?aString=this%20is%20the%20string&aChar=g
 	 */
-	public Map<String, Object> strings(String aString, char aChar) {
+	public Map<String, Object> strings(String aString, Character aChar) {
 		Map<String, Object> map = new HashMap<>();
 		map.put("aString", aString);
 		map.put("aChar", aChar);

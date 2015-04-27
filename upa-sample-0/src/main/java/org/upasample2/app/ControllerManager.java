@@ -6,6 +6,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.lang.reflect.ParameterizedType;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -107,26 +108,54 @@ public class ControllerManager {
 			Object[] args = (Object[]) Array.newInstance(Object.class, method.getParameterCount());
 			int i = 0;
 			for (Parameter parameter : method.getParameters()) {
-				String[] strings = parameterMap.get(parameter.getName());
 				Class<?> parameterType = parameter.getType();
 				if (HttpServletRequest.class.isAssignableFrom(parameterType)) {
 					args[i] = httpServletRequest;
 				} else if (HttpServletResponse.class.isAssignableFrom(parameterType)) {
 					args[i] = httpServletResponse;
-				} else if (strings == null) {
-					args[i] = null;
-				} else {
-					if (parameterType.isArray()) {
+				} else if (parameterType.isArray()) {
+					String[] strings = parameterMap.get(parameter.getName());
+					if (strings != null) {
 						args[i] = convertUtilsBean.convert(strings, parameterType.getComponentType());
-					} else if (List.class.isAssignableFrom(parameterType)) {
-						ParameterizedType parameterizedType = (ParameterizedType) parameter.getParameterizedType();
-						args[i] = Arrays.asList(convertUtilsBean.convert(strings,
-								(Class<?>) parameterizedType.getActualTypeArguments()[0]));
 					} else {
+						args[i] = Array.newInstance(parameterType.getComponentType(), 0);
+					}
+				} else if (List.class.isAssignableFrom(parameterType)) {
+					String[] strings = parameterMap.get(parameter.getName());
+					ParameterizedType parameterizedType = (ParameterizedType) parameter.getParameterizedType();
+					if (strings != null) {
+						Class<?> clazz = (Class<?>) parameterizedType.getActualTypeArguments()[0];
+						args[i] = Arrays.asList(convertUtilsBean.convert(strings, clazz));
+					} else {
+						args[i] = Collections.EMPTY_LIST;
+					}
+				} else if (Map.class.isAssignableFrom(parameterType)) {
+					Map<String, String> strings = findSubmap(parameterMap, parameter.getName());
+					ParameterizedType parameterizedType = (ParameterizedType) parameter.getParameterizedType();
+					if (strings != null) {
+						Class<?> keyClazz = (Class<?>) parameterizedType.getActualTypeArguments()[0];
+						Class<?> valueClazz = (Class<?>) parameterizedType.getActualTypeArguments()[1];
+						Map<Object, Object> map = new HashMap<>();
+						for (Map.Entry<String, String> entry : strings.entrySet()) {
+							String keyString = entry.getKey();
+							String valueString = entry.getValue();
+							map.put(convertUtilsBean.convert(keyString, keyClazz),
+									convertUtilsBean.convert(valueString, valueClazz));
+						}
+						args[i] = map;
+					} else {
+						args[i] = Collections.EMPTY_MAP;
+					}
+				} else {
+					String[] strings = parameterMap.get(parameter.getName());
+					if (strings != null) {
 						String argument = strings[0];
 						args[i] = convertUtilsBean.convert(argument, parameterType);
+					} else {
+						args[i] = null;
 					}
 				}
+
 				i++;
 			}
 			try {
@@ -141,6 +170,20 @@ public class ControllerManager {
 
 		}
 
+	}
+
+	private Map<String, String> findSubmap(Map<String, String[]> parameterMap, String name) {
+		Map<String, String> map = new HashMap<>();
+		for (Map.Entry<String, String[]> entry : parameterMap.entrySet()) {
+			String key = entry.getKey();
+			String[] strings = entry.getValue();
+			if (key.length() > name.length() && key.startsWith(name) && key.charAt(name.length()) == '['
+					&& key.charAt(key.length() - 1) == ']') {
+				String newKey = key.substring(name.length() + 1, key.length() - 1);
+				map.put(newKey, strings[0]);
+			}
+		}
+		return map;
 	}
 
 	private String findKey(String requestURI) {
