@@ -1,11 +1,10 @@
 package org.upasample2.app.file;
 
-import java.io.InputStream;
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletResponse;
 
 public interface UpaFile {
-	String getFileName();
 
-	InputStream getContent();
-
-	Integer getLength();
+	void writeResponse(HttpServletResponse httpServletResponse) throws IOException;
 }

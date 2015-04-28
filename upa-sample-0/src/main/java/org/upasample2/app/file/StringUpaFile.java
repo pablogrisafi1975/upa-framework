@@ -1,8 +1,12 @@
 package org.upasample2.app.file;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
+
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * StringBuffered based. Uses UTF-8 without BOM as recommended by Unicode
@@ -21,23 +25,30 @@ public class StringUpaFile implements UpaFile {
 		this.fileName = fileName;
 	}
 
-	@Override
-	public String getFileName() {
-		return fileName;
-	}
-
-	@Override
-	public InputStream getContent() {
-		return new ByteArrayInputStream(stringBuffer.toString().getBytes(StandardCharsets.UTF_8));
-	}
-
-	@Override
-	public Integer getLength() {
-		return stringBuffer.length();
-	}
-
 	public void append(String string) {
 		stringBuffer.append(string);
+	}
+
+	@Override
+	public void writeResponse(HttpServletResponse response) throws IOException {
+		response.setContentType("application/octet-stream");
+		response.setContentLength(stringBuffer.length());
+		response.setHeader("Content-Disposition", String.format("attachment; filename=\"%s\"", this.fileName));
+		OutputStream out = response.getOutputStream();
+		try (InputStream in = new ByteArrayInputStream(stringBuffer.toString().getBytes(StandardCharsets.UTF_8))) {
+			byte[] buffer = new byte[4096];
+			int length;
+			while ((length = in.read(buffer)) > 0) {
+				out.write(buffer, 0, length);
+			}
+		}
+		out.flush();
+
+	}
+
+	@Override
+	public String toString() {
+		return "StringUpaFile[fileName=" + this.fileName + "]";
 	}
 
 }

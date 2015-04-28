@@ -1,8 +1,6 @@
 package org.upasample2.app;
 
-import java.io.BufferedInputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 
 import javax.inject.Inject;
 import javax.servlet.ServletConfig;
@@ -56,21 +54,7 @@ public class RouterServlet extends HttpServlet {
 		Object returnObject = controllerManager.invoke(httpServletRequest, httpServletResponse);
 		if (returnObject instanceof UpaFile) {
 			UpaFile upaFile = (UpaFile) returnObject;
-			response.setContentType("application/octet-stream");
-			if (upaFile.getLength() != null) {
-				response.setContentLength((int) upaFile.getLength());
-			}
-			httpServletResponse.setHeader("Content-Disposition",
-					String.format("attachment; filename=\"%s\"", upaFile.getFileName()));
-			OutputStream out = response.getOutputStream();
-			try (BufferedInputStream in = new BufferedInputStream(upaFile.getContent())) {
-				byte[] buffer = new byte[4096];
-				int length;
-				while ((length = in.read(buffer)) > 0) {
-					out.write(buffer, 0, length);
-				}
-			}
-			out.flush();
+			upaFile.writeResponse(httpServletResponse);
 		} else {
 			response.setCharacterEncoding("UTF-8");
 			response.setContentType("application/json");
