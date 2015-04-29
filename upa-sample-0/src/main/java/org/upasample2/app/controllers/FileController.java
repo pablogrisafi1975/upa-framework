@@ -1,10 +1,14 @@
 package org.upasample2.app.controllers;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.upasample2.app.file.HugeUpaFile;
 import org.upasample2.app.file.StringUpaFile;
 import org.upasample2.app.file.UpaFile;
+import org.upasample2.app.file.UpaUploadFile;
 
 public class FileController {
 	/*-
@@ -57,6 +61,25 @@ public class FileController {
 			}
 		});
 		return hugeUpaFile;
+	}
+
+	public Map<String, String> uploadOneFile(UpaUploadFile file) {
+		Map<String, String> map = new HashMap<>();
+		map.put("fileName", file.getName());
+		byte[] bytes = file.getContent().length < 200 ? file.getContent() : Arrays.copyOfRange(file.getContent(), 0,
+				200);
+		map.put("fileContent", new String(bytes, StandardCharsets.UTF_8));
+		return map;
+	}
+
+	public Map<String, String> uploadManyFiles(UpaUploadFile[] files) {
+		Map<String, String> map = new HashMap<>();
+		for (UpaUploadFile file : files) {
+			byte[] bytes = file.getContent().length < 200 ? file.getContent() : Arrays.copyOfRange(file.getContent(),
+					0, 200);
+			map.put(file.getName(), new String(bytes, StandardCharsets.UTF_8));
+		}
+		return map;
 	}
 
 }

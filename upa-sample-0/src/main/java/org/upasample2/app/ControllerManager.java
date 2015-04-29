@@ -1,5 +1,6 @@
 package org.upasample2.app;
 
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -16,12 +17,15 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import javax.inject.Inject;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 import org.apache.commons.beanutils.ConvertUtilsBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.upasample2.app.file.UpaUploadFile;
 
 import com.google.inject.Binding;
 import com.google.inject.Key;
@@ -113,6 +117,15 @@ public class ControllerManager {
 					args[i] = httpServletRequest;
 				} else if (HttpServletResponse.class.isAssignableFrom(parameterType)) {
 					args[i] = httpServletResponse;
+				} else if (UpaUploadFile.class.isAssignableFrom(parameterType)) {
+					Part filePart;
+					try {
+						filePart = httpServletRequest.getPart(parameter.getName());
+						String fileName = Utils.getFileName(filePart);
+						args[i] = new UpaUploadFile(fileName, Utils.readFully(filePart.getInputStream()));
+					} catch (IOException | ServletException e) {
+						e.printStackTrace();
+					}
 				} else if (parameterType.isArray()) {
 					String[] strings = parameterMap.get(parameter.getName());
 					if (strings != null) {

@@ -1,6 +1,8 @@
 package org.upasample2.app;
 
+import java.io.EOFException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -10,6 +12,7 @@ import java.util.Map;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.Part;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,6 +44,52 @@ public class Utils {
 
 		}
 
+	}
+
+	public static String getFileName(Part part) {
+		for (String cd : part.getHeader("content-disposition").split(";")) {
+			if (cd.trim().startsWith("filename")) {
+				String fileName = cd.substring(cd.indexOf('=') + 1).trim().replace("\"", "");
+				return fileName.substring(fileName.lastIndexOf('/') + 1).substring(fileName.lastIndexOf('\\') + 1); // MSIE
+																													// fix.
+			}
+		}
+		return null;
+	}
+
+	public static byte[] readFully(InputStream is) throws IOException {
+		return readFully(is, -1, true);
+	}
+
+	public static byte[] readFully(InputStream is, int length, boolean readAll) throws IOException {
+		byte[] output = {};
+		if (length == -1)
+			length = Integer.MAX_VALUE;
+		int pos = 0;
+		while (pos < length) {
+			int bytesToRead;
+			if (pos >= output.length) { // Only expand when there's no room
+				bytesToRead = Math.min(length - pos, output.length + 1024);
+				if (output.length < pos + bytesToRead) {
+					output = Arrays.copyOf(output, pos + bytesToRead);
+				}
+			} else {
+				bytesToRead = output.length - pos;
+			}
+			int cc = is.read(output, pos, bytesToRead);
+			if (cc < 0) {
+				if (readAll && length != Integer.MAX_VALUE) {
+					throw new EOFException("Detect premature EOF");
+				} else {
+					if (output.length != pos) {
+						output = Arrays.copyOf(output, pos);
+					}
+					break;
+				}
+			}
+			pos += cc;
+		}
+		return output;
 	}
 
 }

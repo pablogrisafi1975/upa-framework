@@ -20,6 +20,7 @@ import com.google.inject.Injector;
 import com.google.inject.Singleton;
 
 @Singleton
+// only needed for uploading files
 public class RouterServlet extends HttpServlet {
 
 	private static Logger logger = LoggerFactory.getLogger(RouterServlet.class);
