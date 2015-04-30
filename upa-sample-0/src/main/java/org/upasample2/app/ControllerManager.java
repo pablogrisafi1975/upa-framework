@@ -6,6 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.lang.reflect.ParameterizedType;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -123,6 +124,21 @@ public class ControllerManager {
 						filePart = httpServletRequest.getPart(parameter.getName());
 						String fileName = Utils.getFileName(filePart);
 						args[i] = new UpaUploadFile(fileName, Utils.readFully(filePart.getInputStream()));
+					} catch (IOException | ServletException e) {
+						e.printStackTrace();
+					}
+				} else if (UpaUploadFile[].class.isAssignableFrom(parameterType)) {
+					try {
+						List<UpaUploadFile> files = new ArrayList<>();
+						for (Part part : httpServletRequest.getParts()) {
+							if (part.getName().equals(parameter.getName())) {
+								String fileName = Utils.getFileName(part);
+								UpaUploadFile upaUploadFile = new UpaUploadFile(fileName, Utils.readFully(part
+										.getInputStream()));
+								files.add(upaUploadFile);
+							}
+						}
+						args[i] = files.toArray(new UpaUploadFile[] {});
 					} catch (IOException | ServletException e) {
 						e.printStackTrace();
 					}

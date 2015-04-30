@@ -63,6 +63,8 @@ public class FileController {
 		return hugeUpaFile;
 	}
 
+	// http://localhost:8080/upa-sample-0/FileUploadSimple.html
+	// http://localhost:8080/upa-sample-0/FileUploadAjax.html
 	public Map<String, String> uploadOneFile(UpaUploadFile file) {
 		Map<String, String> map = new HashMap<>();
 		map.put("fileName", file.getName());
@@ -72,6 +74,7 @@ public class FileController {
 		return map;
 	}
 
+	// http://localhost:8080/upa-sample-0/FileUploadAjaxMulti.html
 	public Map<String, String> uploadManyFiles(UpaUploadFile[] files) {
 		Map<String, String> map = new HashMap<>();
 		for (UpaUploadFile file : files) {
