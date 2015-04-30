@@ -128,20 +128,8 @@ public class ControllerManager {
 						e.printStackTrace();
 					}
 				} else if (UpaUploadFile[].class.isAssignableFrom(parameterType)) {
-					try {
-						List<UpaUploadFile> files = new ArrayList<>();
-						for (Part part : httpServletRequest.getParts()) {
-							if (part.getName().equals(parameter.getName())) {
-								String fileName = Utils.getFileName(part);
-								UpaUploadFile upaUploadFile = new UpaUploadFile(fileName, Utils.readFully(part
-										.getInputStream()));
-								files.add(upaUploadFile);
-							}
-						}
-						args[i] = files.toArray(new UpaUploadFile[] {});
-					} catch (IOException | ServletException e) {
-						e.printStackTrace();
-					}
+					List<UpaUploadFile> files = parseUploadedFiles(httpServletRequest, parameter.getName());
+					args[i] = files.toArray(new UpaUploadFile[] {});
 				} else if (parameterType.isArray()) {
 					String[] strings = parameterMap.get(parameter.getName());
 					if (strings != null) {
@@ -150,13 +138,17 @@ public class ControllerManager {
 						args[i] = Array.newInstance(parameterType.getComponentType(), 0);
 					}
 				} else if (List.class.isAssignableFrom(parameterType)) {
-					String[] strings = parameterMap.get(parameter.getName());
 					ParameterizedType parameterizedType = (ParameterizedType) parameter.getParameterizedType();
-					if (strings != null) {
-						Class<?> clazz = (Class<?>) parameterizedType.getActualTypeArguments()[0];
-						args[i] = Arrays.asList(convertUtilsBean.convert(strings, clazz));
+					Class<?> clazz = (Class<?>) parameterizedType.getActualTypeArguments()[0];
+					if (clazz.isAssignableFrom(UpaUploadFile.class)) {
+						args[i] = parseUploadedFiles(httpServletRequest, parameter.getName());
 					} else {
-						args[i] = Collections.EMPTY_LIST;
+						String[] strings = parameterMap.get(parameter.getName());
+						if (strings != null) {
+							args[i] = Arrays.asList(convertUtilsBean.convert(strings, clazz));
+						} else {
+							args[i] = Collections.EMPTY_LIST;
+						}
 					}
 				} else if (Map.class.isAssignableFrom(parameterType)) {
 					Map<String, String> strings = findSubmap(parameterMap, parameter.getName());
@@ -199,6 +191,23 @@ public class ControllerManager {
 
 		}
 
+	}
+
+	private List<UpaUploadFile> parseUploadedFiles(HttpServletRequest httpServletRequest, String parameterName) {
+		List<UpaUploadFile> files = new ArrayList<>();
+		try {
+			for (Part part : httpServletRequest.getParts()) {
+				if (part.getName().equals(parameterName)) {
+					String fileName = Utils.getFileName(part);
+					UpaUploadFile upaUploadFile = new UpaUploadFile(fileName, Utils.readFully(part.getInputStream()));
+					files.add(upaUploadFile);
+				}
+			}
+		} catch (IOException | ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return files;
 	}
 
 	private Map<String, String> findSubmap(Map<String, String[]> parameterMap, String name) {

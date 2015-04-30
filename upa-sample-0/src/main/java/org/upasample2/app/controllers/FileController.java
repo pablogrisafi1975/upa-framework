@@ -3,6 +3,7 @@ package org.upasample2.app.controllers;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.upasample2.app.file.HugeUpaFile;
@@ -74,8 +75,19 @@ public class FileController {
 		return map;
 	}
 
-	// http://localhost:8080/upa-sample-0/FileUploadAjaxMulti.html
+	// http://localhost:8080/upa-sample-0/FileUploadAjaxArray.html
 	public Map<String, String> uploadManyFiles(UpaUploadFile[] files) {
+		Map<String, String> map = new HashMap<>();
+		for (UpaUploadFile file : files) {
+			byte[] bytes = file.getContent().length < 200 ? file.getContent() : Arrays.copyOfRange(file.getContent(),
+					0, 200);
+			map.put(file.getName(), new String(bytes, StandardCharsets.UTF_8));
+		}
+		return map;
+	}
+
+	// http://localhost:8080/upa-sample-0/FileUploadAjaxList.html
+	public Map<String, String> uploadManyFilesList(List<UpaUploadFile> files) {
 		Map<String, String> map = new HashMap<>();
 		for (UpaUploadFile file : files) {
 			byte[] bytes = file.getContent().length < 200 ? file.getContent() : Arrays.copyOfRange(file.getContent(),
