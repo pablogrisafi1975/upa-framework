@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<display-name>upa-sample-1-webapp</display-name>
+	<filter>
+		<filter-name>guiceFilter</filter-name>
+		<filter-class>com.google.inject.servlet.GuiceFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>guiceFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- esto es para la v0, no hace falta en v1
+	<context-param>
+		<param-name>upa-config-impl</param-name>
+		<param-value>org.upasample0.app.upa.UpaConfigImpl</param-value>
+	</context-param>
+	 -->
+	<listener>
+		<!-- basic guice application listener <listener-class>org.upasample0.guice.MyGuiceServletConfig</listener-class> -->
+		<!-- v0 no me gusto, muy basada en la herencia, muy framework <listener-class>org.upasample0.upa.UpaServletConfig</listener-class>-->
+		<!-- v1 no me gusto, muy framework, no supe que hacer <listener-class>org.upasample2.upa.UpaServletConfig</listener-class>-->
+		<listener-class>org.upa.UpaGuiceServletConfig2</listener-class>
+		
+	</listener>
+</web-app>
